@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang='ru'>
+
+<head>
+    <meta http-equiv="Content-type" , content="trxt/html, charset=UTF-8">
+</head>
+
+<body>
+
+    <script>
+        function makeCalculation() {
+            let x = +prompt("Введите число 1", 0)
+            if(Number.isNaN(x)){
+                console.log("Некорректный ввод!"); return 
+            }
+            let y = +prompt("Введите число 2", 0)
+
+            if ( Number.isNaN(y) || y===0) {
+                console.log("Некорректный ввод!"); return 
+            }
+
+
+            let result = "Ответ: " + `${x+y}, ` + `${x/y}`
+        
+
+            console.log(result)
+            }
+        
+        makeCalculation()
+
+
+    </script>
+</body>
+
+</html>

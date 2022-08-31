@@ -9,36 +9,15 @@
 
     <script>
 
-let myIterable = {
-    from: 1,
-    to: 4,
-    [Symbol.iterator]() {
-        let from = this.from;
-        let to = this.to;
-
-        if (!Number.isFinite(from) || !Number.isFinite(from) || from > to) {
-            throw new Error('Ошибка');
+Array.prototype.myFilter = function(condition, context){
+    const cb = condition.bind(context)
+    let array = [];
+    for (let i = 0; i < this.length; i++){
+        if (cb(this[i], i, this )){
+            array.push(this[i])
         }
-
-        return {
-            next() {
-                if (from > to) {
-                    return {
-                        done: true,
-                    }
-                } else {
-                    const current = from;
-                    from += 1;
-                    return {
-                        value: current,
-                        done: false,
-                    }
-                }
-            }
-        }
-    }
-};
-
+    } return array;
+}
 
 
     </script>

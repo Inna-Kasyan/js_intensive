@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang='ru'>
+
+<head>
+    <meta http-equiv="Content-type" , content="trxt/html, charset=UTF-8">
+</head>
+
+<body>
+
+    <script>
+
+let myIterable = {
+    from: 1,
+    to: 4,
+    [Symbol.iterator]() {
+        let from = this.from;
+        let to = this.to;
+
+        if (!Number.isFinite(from) || !Number.isFinite(from) || from > to) {
+            throw new Error('Ошибка');
+        }
+
+        return {
+            next() {
+                if (from > to) {
+                    return {
+                        done: true,
+                    }
+                } else {
+                    const current = from;
+                    from += 1;
+                    return {
+                        value: current,
+                        done: false,
+                    }
+                }
+            }
+        }
+    }
+};
+
+
+
+    </script>
+</body>
+
+</html>

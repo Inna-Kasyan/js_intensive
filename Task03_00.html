@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang='ru'>
+
+<head>
+    <meta http-equiv="Content-type" , content="trxt/html, charset=UTF-8">
+</head>
+
+<body>
+
+    <script>
+
+
+        function makeObjectDeepCopy(obj) {
+
+            if (obj.length) {
+                var result = []
+            } else if (typeof obj == "object") {
+                var result = {}
+            } else {
+                return obj
+            }
+            for (let key in obj) {
+                if (typeof obj[key] == "function" || !obj[key].length || typeof obj[key] != "object")
+                    result[key] = obj[key];
+                else reslut[key] = makeObjectDeepCopy(obj[key]);
+            }
+            return result
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>

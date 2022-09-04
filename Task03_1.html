@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang='ru'>
+
+<head>
+    <meta http-equiv="Content-type" , content="trxt/html, charset=UTF-8">
+</head>
+
+<body>
+
+    <script>
+
+
+function selectFromInterval(arr, from, to) {
+    const min = Math.min(from, to);
+    const max = Math.max(from, to);
+
+    const response = [];
+    for (let v of arr) {
+        if (!Number.isFinite(v)) {
+            throw new Error('Error');
+        }
+        if (v >= min && v <= max) {
+            response.push(v);
+        }
+    }
+    return response;
+}
+
+
+    </script>
+</body>
+
+</html>

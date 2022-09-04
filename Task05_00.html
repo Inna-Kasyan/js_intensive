@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang='ru'>
+
+<head>
+    <meta http-equiv="Content-type" , content="trxt/html, charset=UTF-8">
+</head>
+
+<body>
+
+    <script>
+
+const createDebounceFunction = (func, delay) => {
+    let timeout;
+    return function(){
+        const funcInner = () => { func.apply(this, arguments)}
+        clearTimeout(timeout)
+        timeout = setTimeout(funcInner, delay)
+
+    }
+
+}
+
+    </script>
+    </script>
+</body>
+
+</html>

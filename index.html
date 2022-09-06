@@ -2,25 +2,59 @@
 <html lang='ru'>
 
 <head>
-    <meta http-equiv="Content-type" , content="trxt/html, charset=UTF-8">
+  <meta http-equiv="Content-type" , content="trxt/html, charset=UTF-8">
 </head>
 
 <body>
 
-    <script>
+  <script>
 
-Array.prototype.myFilter = function(condition, context){
-    const cb = condition.bind(context)
-    let array = [];
-    for (let i = 0; i < this.length; i++){
-        if (cb(this[i], i, this )){
-            array.push(this[i])
+class Calculator {
+    constructor(x, y) {
+        this.isValidNum(x);
+        this.isValidNum(y);
+        this.x = x;
+        this.y = y;
+    }
+
+    isValidNum(num) {
+        if (!num || !Number.isFinite(num)) {
+            throw new Error("Неверные данные")
         }
-    } return array;
+    }
+
+    setX(num) {
+        this.isValidNum(num);
+        this.x = num
+    }
+
+    setY(num) {
+        this.isValidNum(num);
+        this.y = num
+    }
+
+    logSum() {
+        return this.x + this.y
+
+    }
+    logMul() {
+        return this.x * this.y
+    }
+
+    logSub() {
+        return this.x - this.y
+    }
+
+    logDiv() {
+        if (this.y === 0) {
+            throw new Error("Неверные данные")
+        }
+        return this.x / this.y
+    }
+
 }
-
-
-    </script>
+  </script>
+  </script>
 </body>
 
 </html>

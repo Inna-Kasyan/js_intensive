@@ -1,7 +1,9 @@
-function highAndLow(numbers){
-    let arr = numbers.split(" ");
-     let x = Math.min(...arr);
-     let y = Math.max(...arr);
-     let str =+ y + " " + x
-     return str;
-   }
+function unique(arr) {
+  let set = new Set(arr);
+ return Array.from(set);
+}
+
+let values = ["Hare", "Krishna", "Hare", "Krishna",
+  "Krishna", "Krishna", "Hare", "Hare", ":-O"
+];
+console.log(unique(values))
